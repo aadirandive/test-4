@@ -1,0 +1,38 @@
+#art-form.art-form-page {
+    padding: 40px;
+    text-align: center; /* Center the heading and content */
+  }
+  
+  #art-form.art-form-page .image-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+  }
+  
+  #art-form.art-form-page .image {
+    max-width: 100%;
+    height: auto;
+    margin-right: 20px;
+    cursor: pointer;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  #art-form.art-form-page .image:hover {
+    opacity: 0.8;
+  }
+  
+  #art-form.art-form-page .image-info {
+    flex-grow: 1;
+    margin-right: 20px; /* Add margin-right to create space between image and info */
+    margin-top: 200px;
+  }
+  
+  #art-form.art-form-page .image-info h2 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  #art-form.art-form-page .image-info p {
+    font-size: 14px;
+  }
