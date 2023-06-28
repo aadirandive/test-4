@@ -4,6 +4,7 @@ import About from './components/About';
 import Projects from './components/Projects';
 import Artform from './components/Artform';
 import Contact from './components/Contact';
+import BgLmg from './components/BgLmg';
 import { IconArrowUp } from '@tabler/icons-react';
 import './App.css';
 
@@ -44,12 +45,19 @@ const App: React.FC = () => {
       <Navbar onContentChange={handleContentChange} />
       <div><br /><br /><br /></div>
       <div className="content-container">
+
         <Projects active={activeContent === 'projects'} />
         <div><br /><br /><br /></div>
+
+        <BgLmg active={activeContent === 'bglmg'} /> 
+        <div><br /><br /><br /></div>
+
         <About active={activeContent === 'about'} />
         <div><br /><br /><br /></div>
+
         <Artform active={activeContent === 'art-form'} />
         <div><br /><br /><br /></div>
+
         <Contact active={activeContent === 'contact'} />
       </div>
       <button

@@ -2,12 +2,13 @@
     text-align: center;
     padding: 2rem;
   }
-  
+
+
   .background-image {
     background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8c2VhJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80');
     background-size: cover;
     background-position: center;
-    height: 300px; /* Set the height of the background image container */
+    height: 300px; 
     margin-top: 2rem;
   }
   

@@ -55,7 +55,7 @@ const Projects: React.FC<ProjectsProps> = ({ active }) => {
       <Container>
         <div className="page">
           <h1>Projects</h1>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, harum!</p>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero iusto fugiat modi fuga minus? Sit autem consequuntur impedit, nobis, ut commodi illum nihil nam, nulla officiis possimus ratione odit provident. Dolor excepturi sit facere possimus tempora!</p>
         </div>
         <Row className="project-section">
           <Project
