@@ -1,11 +1,11 @@
 import React from "react";
-import './BgLmg.css'
+import './Bglmg.css'
 
-interface BgLmgProps{
+interface BglmgProps{
     active : boolean;
 }
 
-const BgLmg :React.FC<BgLmgProps> = ({active}) => {
+const  Bglmg:React.FC<BglmgProps> = ({active}) => {
     return (
     <div id="bglmg" className={`bglmg-page ${active ? "active" : ""}`}>
         <div className="bglmg-image"></div>
@@ -13,4 +13,4 @@ const BgLmg :React.FC<BgLmgProps> = ({active}) => {
     );
 }; 
 
-export default BgLmg; 
+export default Bglmg; 

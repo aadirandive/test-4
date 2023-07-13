@@ -28,7 +28,7 @@ const Artform: React.FC<ArtformProps> = ({ active }) => {
               <img
                 src="https://news.artnet.com/app/news-upload/2020/12/476a_history_of_fantasy_art_xl_01182_2008201529_id_1317196.jpg"
                 alt="Imag 1"
-                style={{ marginTop: '0.1rem', marginRight: '22rem' }}
+                style={{ marginTop: '0.1rem', marginRight: '23rem' }}
                 height={300}
                 width={500}
               />
@@ -41,7 +41,7 @@ const Artform: React.FC<ArtformProps> = ({ active }) => {
               <img
                 src="https://news.artnet.com/app/news-upload/2020/12/476a_history_of_fantasy_art_xl_01182_2008201529_id_1317196.jpg"
                 alt="Imag 2"
-                style={{ marginTop: '0.1rem', marginLeft: '22rem' }}
+                style={{ marginTop: '0.1rem', marginLeft: '23rem' }}
                 height={300}
                 width={500}
               />

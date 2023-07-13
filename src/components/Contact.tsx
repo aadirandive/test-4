@@ -1,27 +1,8 @@
-// import React from 'react';
-// import './Contact.css';
-
-// interface ContactProps {
-//   active: boolean;
-// }
-
-// const Contact: React.FC<ContactProps> = ({ active }) => {
-//   return (
-//     <div id="contact" className={`contact-page ${active ? "active" : ""}`}>
-//       <div className="container">
-//         <h1>Contact</h1>
-//         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, harum!</p>
-//       </div>
-//       <div className="background-image"></div>
-//     </div>
-//   );
-// };
-
-// export default Contact;
-
 import React, { useState } from "react";
 import axios from "axios";
-import styles from "./Contact.module.css";
+import { Form, Button, Row, Col } from "react-bootstrap";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import "./Contact.module.css";
 
 interface ContactProps {
   active: boolean;
@@ -32,6 +13,7 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [contact1, setContact1] = useState("");
 
   const handleToggle = () => {
     setFlipCard(!flipCard);
@@ -40,80 +22,120 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await axios.post("http://localhost:8000/contact", { name, email, message });
-      
+      await axios.post("http://localhost:8000/contact", {
+        name,
+        email,
+        contact1,
+        message,
+      });
+
       console.log("Message sent successfully!");
-      
+
       setName("");
       setEmail("");
+      setContact1("");
       setMessage("");
     } catch (error) {
-      
       console.error("Error sending message:", error);
     }
   };
 
+  const mapContainerStyle = {
+    width: "100%",
+    height: "450px",
+    border: "1px solid #ccc",
+    borderRadius: "5px",
+    marginLeft: "130px",
+    padding: "10px 10px 10px 10px",
+  };
+
+  const contactContainerStyle = {
+    width: "100%",
+    height: "450px",
+    border: "1px solid #ccc",
+    borderRadius: "5px",
+    marginLeft: "130px",
+    padding: "10px 10px 10px 10px",
+  };
+
+  const center = {
+    lat: 40.7128, 
+    lng: -74.006, 
+  };
+
   return (
-    <div
-      id="contact"
-      className={`${styles.contactPage} ${active ? styles.active : ""}`}
-    >
-      <div className={styles.contactWrapper}>
-        <div className={`${styles.envelope} ${flipCard ? styles.active : ""}`}>
-          <div className={styles.back + " " + styles.paper}></div>
-          <div className={styles.content}>
-            <div className={styles.formWrapper}>
-              <form onSubmit={handleSubmit}>
-                <div className={styles.topWrapper}>
-                  <div className={styles.input}>
-                    <label>Name</label>
-                    <input
-                      type="text"
-                      name="name"
-                      value={name}
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                  </div>
-                  <div className={styles.input}>
-                    <label>Email</label>
-                    <input
-                      type="text"
-                      name="_replyto"
-                      value={email}
-                      onChange={(e) => setEmail(e.target.value)}
-                    />
-                  </div>
-                </div>
-                <div className={styles.bottomWrapper}>
-                  <div className={styles.input}>
-                    <label>Message</label>
-                    <textarea
-                      rows={5}
-                      name="message"
-                      value={message}
-                      onChange={(e) => setMessage(e.target.value)}
-                    ></textarea>
-                  </div>
-                  <div className={styles.submit}>
-                    <div
-                      className={`${styles.submitCard}`}
-                      onClick={handleToggle}
-                    >
-                      <button>Send Mail</button>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
+    <div id="contact" className={`contacts-page ${active ? "active" : ""}`}>
+      <Row>
+        <Col md={5}>
+          <h1 className="d-flex justify-content-center">Google Map</h1>
+          <div style={mapContainerStyle}>
+            <LoadScript googleMapsApiKey="YOUR_API_KEY">
+              <GoogleMap
+                mapContainerStyle={{ height: "100%" }}
+                center={center}
+                zoom={10}
+              >
+                <Marker position={center} />
+              </GoogleMap>
+            </LoadScript>
           </div>
-          <div className={styles.front + " " + styles.paper}></div>
-        </div>
-      </div>
-      {/* <div className={styles.flipCard} onClick={handleToggle}>
-        {flipCard ? "Reset" : "Animate"}
-      </div> */}
+        </Col>
+        <Col md={5}>
+          <h1 className="d-flex justify-content-center">Contact Us</h1>
+          <Form
+            onSubmit={handleSubmit}
+            className="form-border"
+            style={contactContainerStyle}
+          >
+            <Form.Group controlId="formName">
+              <Form.Label>Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formEmail">
+              <Form.Label>Email</Form.Label>
+              <Form.Control
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formContact">
+              <Form.Label>Contact No.</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Enter your contact number"
+                value={contact1}
+                onChange={(e) => setContact1(e.target.value)}
+              />
+            </Form.Group>
+
+            <Form.Group controlId="formMessage">
+              <Form.Label>Message</Form.Label>
+              <Form.Control
+                as="textarea"
+                rows={5}
+                placeholder="Enter your message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              />
+            </Form.Group>
+
+            <Button variant="primary" type="submit">
+              Submit
+            </Button>
+          </Form>
+        </Col>
+      </Row>
     </div>
   );
-};  
+};
 
 export default Contact;

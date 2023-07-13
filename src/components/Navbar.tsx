@@ -3,6 +3,8 @@ import { Nav, Navbar as BootstrapNavbar } from "react-bootstrap";
 import { Link } from "react-scroll";
 import "./Navbar.css";
 
+import Kairavilogo from "../Assets/img/Kairavilogo.png";
+
 interface NavbarProps {
   onContentChange: (content: string) => void;
 }
@@ -35,12 +37,10 @@ const Navbar: React.FC<NavbarProps> = ({ onContentChange }) => {
   return (
     <div className={`navbar-container ${navbarVisible ? "" : "hidden"}`}>
       <div className="logo-container">
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTNWTtEr8B9B-5IZyyUeW56_n1ImDenSMywJBreD6OG&s"
-          alt="Logo"
-        />
+        <img src={Kairavilogo} alt="Logo" />
       </div>
-      <div className="navbar-background"></div> {/* Added div for background image */}
+      <div className="navbar-background"></div>{" "}
+      {/* Added div for background image */}
       <BootstrapNavbar
         className={`custom-navbar ${navbarExpanded ? "expanded" : ""}`}
         expand="lg"
