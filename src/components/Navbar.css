@@ -53,12 +53,13 @@
   display: flex;
   justify-content: center;
   margin-top: 1rem;
+  margin-left: 3.5rem;
 }
 
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  margin-right: 2rem; /* Adjust the margin as needed */
+  margin-right: 3rem; /* Adjust the margin as needed */
   color: white;
   text-decoration: none;
   transition: opacity 0.3s;

@@ -1,3 +1,4 @@
+/* Projects.css */
 .page {
   text-align: center;
   padding: 20px;
@@ -24,6 +25,7 @@ p {
   background-color: #f9f9f9;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: relative;
+  cursor: pointer;
 }
 
 .project img {
@@ -45,7 +47,6 @@ p {
 
 .image-container {
   position: relative;
-  cursor: pointer;
 }
 
 .image-container::after {
@@ -57,12 +58,12 @@ p {
   height: 100%;
   opacity: 0;
   transition: opacity 0.3s;
+  background-color: rgba(0, 0, 0, 0.5);
   z-index: 1;
 }
 
-.image-container:hover::after {
+.project:hover .image-container::after {
   opacity: 1;
-  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .modal-dialog {
@@ -70,8 +71,6 @@ p {
   justify-content: center;
   align-items: center;
   margin: 0;
-  min-height: 100%;
-  
 }
 
 .modal-content {
@@ -79,8 +78,8 @@ p {
 }
 
 .modal-body img {
-  width: 800px;
-  height: 500px;
+  width: 40rem;
+  height: 25rem;
   max-width: 100%;
   max-height: 100%;
   margin-bottom: 10px;
@@ -101,13 +100,68 @@ p {
   display: none;
 }
 
+.carousel-control-prev,
+.carousel-control-next {
+  width: 5%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.carousel-control-prev-icon::before,
+.carousel-control-next-icon::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M4 0l-4 4h8l-4-4z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23fff' viewBox='0 0 8 8'%3E%3Cpath d='M4 8l4-4h-8l4 4z'/%3E%3C/svg%3E");
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+  list-style: none;
+  padding: 0;
+}
+
+.carousel-indicators li {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 50%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+
+.carousel-indicators li.active {
+  background-color: #fff;
+}
+
+
 @media (max-width: 768px) {
   .project {
-    width: 100%; 
-    max-width: 400px; 
+    width: 100%;
+    max-width: 400px;
   }
 
   .project-section {
+    align-items: center;
     justify-content: center;
   }
 
@@ -118,5 +172,10 @@ p {
 
   .modal-content {
     border-radius: 10px;
+  }
+
+  .modal-body img {
+    width: 100%;
+    height: auto;
   }
 }
