@@ -1,38 +1,54 @@
 #art-form.art-form-page {
-    padding: 40px;
-    text-align: center; /* Center the heading and content */
-  }
-  
+  padding: 40px;
+  text-align: center; /* Center the heading and content */
+}
+
+#art-form.art-form-page .image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+#art-form.art-form-page .image {
+  max-width: 100%;
+  height: auto;
+  margin-right: 0;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: opacity 0.3s ease-in-out;
+}
+
+#art-form.art-form-page .image:hover {
+  opacity: 0.8;
+}
+
+#art-form.art-form-page .image-info {
+  margin-top: 20px;
+}
+
+#art-form.art-form-page .image-info h2 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+#art-form.art-form-page .image-info p {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
   #art-form.art-form-page .image-container {
-    display: flex;
-    align-items: center;
-    margin-bottom: 40px;
+    flex-direction: row;
+    margin-bottom: 0;
   }
-  
+
   #art-form.art-form-page .image {
-    max-width: 100%;
-    height: auto;
     margin-right: 20px;
-    cursor: pointer;
-    transition: opacity 0.3s ease-in-out;
+    margin-bottom: 0;
   }
-  
-  #art-form.art-form-page .image:hover {
-    opacity: 0.8;
-  }
-  
+
   #art-form.art-form-page .image-info {
-    flex-grow: 1;
-    margin-right: 20px; /* Add margin-right to create space between image and info */
-    margin-top: 200px;
+    margin-top: 0;
   }
-  
-  #art-form.art-form-page .image-info h2 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
-  
-  #art-form.art-form-page .image-info p {
-    font-size: 14px;
-  }
+}

@@ -199,32 +199,32 @@ const Projects: React.FC<ProjectsProps> = ({ active }) => {
           <Project
             image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwNQW9lFV-j09Z28HWyMpZyf_vpB7197qrMg&usqp=CAU"
             title="Art 1"
-            description="Art description 1"
+            description=""
           />
           <Project
             image="https://artincontext.org/wp-content/uploads/2022/07/Types-of-Painting-848x530.jpg"
             title="Art 2"
-            description="Art description 2"
+            description=""
           />
           <Project
             image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEF0SvwJAhpjjXsruCJm1YN-yIDXZXk7fr8w&usqp=CAU"
             title="Art 3"
-            description="Art description 3"
+            description=""
           />
           <Project
             image="https://nilayashokshah.files.wordpress.com/2018/03/radha-madhav-arbinda-samanta.jpg?w=760"
             title="Art 4"
-            description="Art description 4"
+            description=""
           />
           <Project
             image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD0HrF-gORJAetxD0cd89s0--t3yKv8pZn9A&usqp=CAU"
             title="Art 5"
-            description="Art description 5"
+            description=""
           />
           <Project
             image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi3PrhwuohYwYZfr5pof16hUtIp3k8gt3WDA&usqp=CAU"
             title="Art 6"
-            description="Art description 6"
+            description=""
           />
         </Row>
       </Container>
