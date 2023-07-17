@@ -2,22 +2,16 @@ import React, { useState } from "react";
 import axios from "axios";
 import { Form, Button, Row, Col } from "react-bootstrap";
 import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-import "./Contact.module.css";
 
 interface ContactProps {
   active: boolean;
 }
 
 const Contact: React.FC<ContactProps> = ({ active }) => {
-  const [flipCard, setFlipCard] = useState(false);
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
   const [contact1, setContact1] = useState("");
-
-  const handleToggle = () => {
-    setFlipCard(!flipCard);
-  };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -45,8 +39,9 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
     height: "450px",
     border: "1px solid #ccc",
     borderRadius: "5px",
-    marginLeft: "130px",
-    padding: "10px 10px 10px 10px",
+    padding: "10px",
+    paddingLeft: "5px", // Added padding to the left side
+    marginBottom: "20px", // Added margin at the bottom
   };
 
   const contactContainerStyle = {
@@ -54,20 +49,21 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
     height: "450px",
     border: "1px solid #ccc",
     borderRadius: "5px",
-    marginLeft: "130px",
-    padding: "10px 10px 10px 10px",
+    padding: "10px",
+    paddingLeft: "10px", // Added padding to the right side
+    marginBottom: "20px", // Added margin at the bottom
   };
 
   const center = {
-    lat: 40.7128, 
-    lng: -74.006, 
+    lat: 40.7128,
+    lng: -74.006,
   };
 
   return (
     <div id="contact" className={`contacts-page ${active ? "active" : ""}`}>
       <Row>
-        <Col md={5}>
-          <h1 className="d-flex justify-content-center">Google Map</h1>
+        <Col md={6} lg={6} xl={6}>
+          <h1 className="text-center">Google Map</h1>
           <div style={mapContainerStyle}>
             <LoadScript googleMapsApiKey="YOUR_API_KEY">
               <GoogleMap
@@ -80,8 +76,8 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
             </LoadScript>
           </div>
         </Col>
-        <Col md={5}>
-          <h1 className="d-flex justify-content-center">Contact Us</h1>
+        <Col md={6} lg={6} xl={6}>
+          <h1 className="text-center">Contact Us</h1>
           <Form
             onSubmit={handleSubmit}
             className="form-border"
