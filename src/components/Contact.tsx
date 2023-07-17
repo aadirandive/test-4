@@ -1,143 +1,3 @@
-// import React, { useState } from "react";
-// import axios from "axios";
-// import { Form, Button, Row, Col } from "react-bootstrap";
-// import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
-// import { Contactformvalidation } from "./Contactformvalidation";
-
-// interface ContactProps {
-//   active: boolean;
-// }
-
-// const Contact: React.FC<ContactProps> = ({ active }) => {
-//   const [name, setName] = useState("");
-//   const [email, setEmail] = useState("");
-//   const [message, setMessage] = useState("");
-//   const [contact1, setContact1] = useState("");
-
-//   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-//     e.preventDefault();
-//     try {
-//       await axios.post("http://localhost:8000/contact", {
-//         name,
-//         email,
-//         contact1,
-//         message,
-//       });
-
-//       console.log("Message sent successfully!");
-
-//       setName("");
-//       setEmail("");
-//       setContact1("");
-//       setMessage("");
-//     } catch (error) {
-//       console.error("Error sending message:", error);
-//     }
-//   };
-
-//   const mapContainerStyle = {
-//     width: "100%",
-//     height: "450px",
-//     border: "1px solid #ccc",
-//     borderRadius: "5px",
-//     padding: "10px",
-//     paddingLeft: "5px", // Added padding to the left side
-//     marginBottom: "20px", // Added margin at the bottom
-//   };
-
-//   const contactContainerStyle = {
-//     width: "100%",
-//     height: "450px",
-//     border: "1px solid #ccc",
-//     borderRadius: "5px",
-//     padding: "10px",
-//     paddingLeft: "10px", // Added padding to the right side
-//     marginBottom: "20px", // Added margin at the bottom
-//   };
-
-//   const center = {
-//     lat: 40.7128,
-//     lng: -74.006,
-//   };
-
-//   return (
-//     <div id="contact" className={`contacts-page ${active ? "active" : ""}`}>
-//       <Row>
-//         <Col md={6} lg={6} xl={6}>
-//           <h1 className="text-center">Google Map</h1>
-//           <div style={mapContainerStyle}>
-//             <LoadScript googleMapsApiKey="YOUR_API_KEY">
-//               <GoogleMap
-//                 mapContainerStyle={{ height: "100%" }}
-//                 center={center}
-//                 zoom={10}
-//               >
-//                 <Marker position={center} />
-//               </GoogleMap>
-//             </LoadScript>
-//           </div>
-//         </Col>
-//         <Col md={6} lg={6} xl={6}>
-//           <h1 className="text-center">Contact Us</h1>
-//           <Form
-//             onSubmit={handleSubmit}
-//             className="form-border"
-//             style={contactContainerStyle}
-//           >
-//             <Form.Group controlId="formName">
-//               <Form.Label>Name</Form.Label>
-//               <Form.Control
-//                 type="text"
-//                 placeholder="Enter your name"
-//                 value={name}
-//                 onChange={(e) => setName(e.target.value)}
-//               />
-//             </Form.Group>
-
-//             <Form.Group controlId="formEmail">
-//               <Form.Label>Email</Form.Label>
-//               <Form.Control
-//                 type="email"
-//                 placeholder="Enter your email"
-//                 value={email}
-//                 onChange={(e) => setEmail(e.target.value)}
-//               />
-//             </Form.Group>
-
-//             <Form.Group controlId="formContact">
-//               <Form.Label>Contact No.</Form.Label>
-//               <Form.Control
-//                 type="text"
-//                 placeholder="Enter your contact number"
-//                 value={contact1}
-//                 onChange={(e) => setContact1(e.target.value)}
-//               />
-//             </Form.Group>
-
-//             <Form.Group controlId="formMessage">
-//               <Form.Label>Message</Form.Label>
-//               <Form.Control
-//                 as="textarea"
-//                 rows={5}
-//                 placeholder="Enter your message"
-//                 value={message}
-//                 onChange={(e) => setMessage(e.target.value)}
-//               />
-//             </Form.Group>
-
-//             <Button variant="primary" type="submit">
-//               Submit
-//             </Button>
-//           </Form>
-//         </Col>
-//       </Row>
-//     </div>
-//   );
-// };
-
-// export default Contact;
-
-
 import React, { useState } from "react";
 import axios from "axios";
 import { Form, Button, Row, Col } from "react-bootstrap";
@@ -191,9 +51,9 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
 
   const validateForm = () => {
     let isValid = true;
-  
+
     const newErrors = { ...errors };
-  
+
     if (!name) {
       newErrors.name = "Name is required";
       isValid = false;
@@ -203,7 +63,7 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
     } else {
       newErrors.name = "";
     }
-  
+
     if (!email) {
       newErrors.email = "Email is required";
       isValid = false;
@@ -213,7 +73,7 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
     } else {
       newErrors.email = "";
     }
-  
+
     if (!contact1) {
       newErrors.contact1 = "Contact number is required";
       isValid = false;
@@ -223,19 +83,18 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
     } else {
       newErrors.contact1 = "";
     }
-  
+
     if (!message) {
       newErrors.message = "Message is required";
       isValid = false;
     } else {
       newErrors.message = "";
     }
-  
+
     setErrors(newErrors);
-  
+
     return isValid;
   };
-  
 
   const mapContainerStyle = {
     width: "100%",
@@ -250,7 +109,7 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
   const contactContainerStyle = {
     width: "100%",
     height: "450px",
-    border: "1px solid #ccc",
+    // border: "1px solid #ccc",
     borderRadius: "5px",
     padding: "10px",
     paddingLeft: "10px",
@@ -265,7 +124,8 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
   return (
     <div id="contact" className={`contacts-page ${active ? "active" : ""}`}>
       <Row>
-        <Col md={6} lg={6} xl={6}>
+        <Col md={1} />
+        <Col md={5} lg={5} xl={5}>
           <h1 className="text-center">Google Map</h1>
           <div style={mapContainerStyle}>
             <LoadScript googleMapsApiKey="YOUR_API_KEY">
@@ -279,7 +139,8 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
             </LoadScript>
           </div>
         </Col>
-        <Col md={6} lg={6} xl={6}>
+
+        <Col md={5} lg={5} xl={5}>
           <h1 className="text-center">Contact Us</h1>
           <Form
             onSubmit={handleSubmit}
@@ -287,7 +148,7 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
             style={contactContainerStyle}
           >
             <Form.Group controlId="formName">
-              <Form.Label>Name</Form.Label>
+              <Form.Label>Name :</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter your name"
@@ -301,7 +162,7 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
             </Form.Group>
 
             <Form.Group controlId="formEmail">
-              <Form.Label>Email</Form.Label>
+              <Form.Label>Email :</Form.Label>
               <Form.Control
                 type="email"
                 placeholder="Enter your email"
@@ -315,7 +176,7 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
             </Form.Group>
 
             <Form.Group controlId="formContact">
-              <Form.Label>Contact No.</Form.Label>
+              <Form.Label>Contact No. :</Form.Label>
               <Form.Control
                 type="text"
                 placeholder="Enter your contact number"
@@ -329,7 +190,7 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
             </Form.Group>
 
             <Form.Group controlId="formMessage">
-              <Form.Label>Message</Form.Label>
+              <Form.Label>Message :</Form.Label>
               <Form.Control
                 as="textarea"
                 rows={5}

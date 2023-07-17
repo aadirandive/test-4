@@ -16,7 +16,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px; /* Adjust the height of the logo container as needed */
+  height: 100px; 
   transition: opacity 0.3s;
   opacity: 1;
   margin-top: 1rem;
@@ -59,7 +59,7 @@
 .nav-link {
   display: block;
   padding: 0.5rem 1rem;
-  margin-right: 3rem; /* Adjust the margin as needed */
+  margin-right: 3rem; 
   color: white;
   text-decoration: none;
   transition: opacity 0.3s;
@@ -81,10 +81,10 @@
   }
 
   .logo-container {
-    margin-top: 1.5rem; /* Adjust the margin as needed */
+    margin-top: 1.5rem; 
   }
 
   .navbar-container {
-    margin-top: 1rem; /* Adjust the margin as needed */
+    margin-top: 1rem; 
   }
 }
