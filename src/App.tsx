@@ -79,9 +79,10 @@ const App: React.FC = () => {
 
         <Contact active={activeContent === "contact"} />
       </div>
+
       <button
         id="btn-back-to-top"
-        className="scroll-to-top"
+        className="scroll-to-top btn btn-primary rounded-circle"
         onClick={handleScrollToTop}
       >
         <IconArrowUp size="1rem" className="scroll-to-top-icon" />
