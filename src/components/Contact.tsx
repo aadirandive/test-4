@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Form, Button, Row, Col } from "react-bootstrap";
-import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
+import { API_BASE_URL } from "../constant";
 
 interface ContactProps {
   active: boolean;
@@ -24,7 +24,7 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
 
     if (validateForm()) {
       try {
-        await axios.post("http://localhost:8000/contact", {
+        await axios.post(API_BASE_URL + "/contact", {
           name,
           email,
           contact1,
@@ -96,29 +96,13 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
     return isValid;
   };
 
-  const mapContainerStyle = {
-    width: "100%",
-    height: "450px",
-    border: "1px solid #ccc",
-    borderRadius: "5px",
-    padding: "10px",
-    paddingLeft: "5px",
-    marginBottom: "20px",
-  };
-
   const contactContainerStyle = {
     width: "100%",
     height: "450px",
-    // border: "1px solid #ccc",
     borderRadius: "5px",
     padding: "10px",
     paddingLeft: "10px",
     marginBottom: "20px",
-  };
-
-  const center = {
-    lat: 40.7128,
-    lng: -74.006,
   };
 
   return (
@@ -127,21 +111,20 @@ const Contact: React.FC<ContactProps> = ({ active }) => {
         <Col md={1} />
         <Col md={5} lg={5} xl={5}>
           <h1 className="text-center">Google Map</h1>
-          <div style={mapContainerStyle}>
-            <LoadScript googleMapsApiKey="YOUR_API_KEY">
-              <GoogleMap
-                mapContainerStyle={{ height: "100%" }}
-                center={center}
-                zoom={10}
-              >
-                <Marker position={center} />
-              </GoogleMap>
-            </LoadScript>
+          <div style={contactContainerStyle}>
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.4397018219997!2d73.82765667514528!3d18.50902188258226!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2bf850266eb41%3A0x1f6def1c13ba33e4!2sSkeletos%20IT%20Services%20LLP!5e0!3m2!1sen!2sin!4v1689669974214!5m2!1sen!2sin"
+              style={{ width: "100%", height: "100%", border: "0" }}
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </Col>
 
         <Col md={5} lg={5} xl={5}>
           <h1 className="text-center">Contact Us</h1>
+
           <Form
             onSubmit={handleSubmit}
             className="form-border"

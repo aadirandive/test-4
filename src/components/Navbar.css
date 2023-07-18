@@ -3,8 +3,7 @@
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
-  background-color: transparent;
+  z-index: 100;  
   transition: opacity 0.3s;
   opacity: 1;
   margin-top: 2rem;
@@ -16,10 +15,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px; 
+  width: 95px;
+  height: 100px;
+  border-radius: 25px;
   transition: opacity 0.3s;
   opacity: 1;
   margin-top: 1rem;
+  margin-left: 15rem;
+  background-color: rgb(247, 244, 241);
 }
 
 .navbar-container.hidden {
@@ -33,7 +36,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  background-image: url("https://e0.pxfuel.com/wallpapers/731/27/desktop-wallpaper-resolution-black-and-white-grey-sea-with-rocks-background-gray.jpg");
+  background-image: url("../Assets/img/hero.png");
   background-size: cover;
   background-position: center;
   min-height: 100%;
@@ -48,26 +51,28 @@
 }
 
 .custom-navbar {
-  background-color: transparent;
-  transition: background-color 0.3s;
+  /* background-color: transparent; */
+  /* transition: background-color 0.3s; */
   display: flex;
   justify-content: center;
   margin-top: 1rem;
   margin-left: 3.5rem;
+  border-radius: 25px;
+  background-color: rgb(198, 194, 194);
 }
 
 .nav-link {
   display: block;
-  padding: 0.5rem 1rem;
-  margin-right: 3rem; 
-  color: white;
-  text-decoration: none;
+  padding: 1rem 1rem;
+  margin-right: 3rem;  
+  color: black;
   transition: opacity 0.3s;
   cursor: pointer;
+  
 }
 
 .nav-link:hover {
-  opacity: 0.7;
+  opacity: 0.7;  
 }
 
 @media (max-width: 768px) {
@@ -81,10 +86,10 @@
   }
 
   .logo-container {
-    margin-top: 1.5rem; 
+    margin-top: 1.5rem;
   }
 
   .navbar-container {
-    margin-top: 1rem; 
+    margin-top: 1rem;
   }
 }

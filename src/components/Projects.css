@@ -1,4 +1,3 @@
-
 .page {
   text-align: center;
   padding: 20px;
@@ -52,7 +51,7 @@ p {
 }
 
 .image-container::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -74,11 +73,14 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
+  margin: 10px;
 }
 
 .modal-content {
   text-align: center;
+  border: 1px solid;
+  padding: 10px;
+  box-shadow: 1px 3px 10px 10px;
 }
 
 .modal-body img {
@@ -104,9 +106,28 @@ p {
   display: none;
 }
 
+.carousel-modal .carousel-control-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  font-size: 20px;
+}
+
+.carousel-modal .carousel-control-icon:hover {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
 .carousel-control-prev,
 .carousel-control-next {
   width: 5%;
+  z-index: 1051;
 }
 
 .carousel-control-prev-icon,
@@ -114,6 +135,18 @@ p {
   height: 100%;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.carousel-control-prev-icon {
+  left: -80px;
+}
+
+.carousel-control-next-icon {
+  right: -80px;
 }
 
 .carousel-control-prev-icon::before,
@@ -156,7 +189,6 @@ p {
 .carousel-indicators li.active {
   background-color: #fff;
 }
-
 
 @media (max-width: 768px) {
   .project {
