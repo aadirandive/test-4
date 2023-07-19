@@ -72,44 +72,42 @@ interface ProjectsProps {
 const Projects: React.FC<ProjectsProps> = ({ active }) => {
   return (
     <div id="projects" className={`projects-page ${active ? "active" : ""}`}>
-      <div id="projects" className="projects-page">
-        <Container>
-          <div className="page">
-            <h1>Projects</h1>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
-              iusto fugiat modi fuga minus? Sit autem consequuntur impedit,
-              nobis, ut commodi illum nihil nam, nulla officiis possimus ratione
-              odit provident. Dolor excepturi sit facere possimus tempora!
-            </p>
-          </div>
-          <Row className="project-section">
-            <Col md={3} lg={3} xl={3}>
-              <Project
-                images={[
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwNQW9lFV-j09Z28HWyMpZyf_vpB7197qrMg&usqp=CAU",
-                  "https://artincontext.org/wp-content/uploads/2022/07/Types-of-Painting-848x530.jpg",
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEF0SvwJAhpjjXsruCJm1YN-yIDXZXk7fr8w&usqp=CAU",
-                ]}
-                titles={["Art 1", "Art 2", "Art 3"]}
-                description=""
-              />
-            </Col>
-            <Col md={2} />
-            <Col md={3} lg={3} xl={3}>
-              <Project
-                images={[
-                  "https://nilayashokshah.files.wordpress.com/2018/03/radha-madhav-arbinda-samanta.jpg?w=760",
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD0HrF-gORJAetxD0cd89s0--t3yKv8pZn9A&usqp=CAU",
-                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi3PrhwuohYwYZfr5pof16hUtIp3k8gt3WDA&usqp=CAU",
-                ]}
-                titles={["Art 4", "Art 5", "Art 6"]}
-                description=""
-              />
-            </Col>
-          </Row>
-        </Container>
-      </div>
+      <Container>
+        <div className="page">
+          <h1>Projects</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero
+            iusto fugiat modi fuga minus? Sit autem consequuntur impedit,
+            nobis, ut commodi illum nihil nam, nulla officiis possimus ratione
+            odit provident. Dolor excepturi sit facere possimus tempora!
+          </p>
+        </div>
+        <Row className="justify-content-center"> {/* Centering the Row */}
+          <Col xs={12} md={3} lg={3} xl={3}>
+            <Project
+              images={[
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwNQW9lFV-j09Z28HWyMpZyf_vpB7197qrMg&usqp=CAU",
+                "https://artincontext.org/wp-content/uploads/2022/07/Types-of-Painting-848x530.jpg",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSEF0SvwJAhpjjXsruCJm1YN-yIDXZXk7fr8w&usqp=CAU",
+              ]}
+              titles={["Art 1", "Art 2", "Art 3"]}
+              description=""
+            />
+          </Col>
+          <Col xs={0} md={2} /> {/* A hidden column to create space between the projects */}
+          <Col xs={12} md={3} lg={3} xl={3}>
+            <Project
+              images={[
+                "https://nilayashokshah.files.wordpress.com/2018/03/radha-madhav-arbinda-samanta.jpg?w=760",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTD0HrF-gORJAetxD0cd89s0--t3yKv8pZn9A&usqp=CAU",
+                "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTi3PrhwuohYwYZfr5pof16hUtIp3k8gt3WDA&usqp=CAU",
+              ]}
+              titles={["Art 4", "Art 5", "Art 6"]}
+              description=""
+            />
+          </Col>
+        </Row>
+      </Container>
     </div>
   );
 };
