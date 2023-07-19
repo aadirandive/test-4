@@ -1,1 +1,1 @@
-export const API_BASE_URL = "http://101.53.134.82:8005";
+export const API_BASE_URL = process.env.REACT_APP_API_KEY;
