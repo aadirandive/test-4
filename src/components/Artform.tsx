@@ -255,6 +255,45 @@ const Artform: React.FC<ArtformProps> = ({ active }) => {
           </Col>
         </Row>
 
+        <Row>
+          <Col md={5} lg={5} xl={5}>
+            <div
+              className="d-flex flex-column align-items-center"
+              style={{ marginTop: "7rem" }}
+            >
+              <h2>Branding</h2>
+              <p
+                className="text-right"
+                style={{ maxWidth: "300px", margin: "0 auto" }}
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Corrupti ipsa ad perspiciatis non modi nisi mollitia, sapiente
+                vitae?
+              </p>
+            </div>
+          </Col>
+          <Col md={1} />
+          <Col className="d-flex justify-content-center align-items-center">
+            <div
+              className="d-flex justify-content-center align-items-center"
+              style={{
+                height: "25rem",
+                width: "15rem",
+                marginLeft: "12rem",
+                backgroundColor: "#e6e6e6",
+              }}
+            >
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZc1r2o5e0b3rBDS0PuVaRZrki2fI6mbyHYw&usqp=CAU"
+                alt="Imag 7"
+                style={{ marginTop: "0.1rem", marginRight: "23rem" }}
+                height={300}
+                width={500}
+              />
+            </div>
+          </Col>
+        </Row>
+
       </Container>
     </div>
   );
