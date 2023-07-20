@@ -216,6 +216,45 @@ const Artform: React.FC<ArtformProps> = ({ active }) => {
           </Col>
         </Row>
 
+        <Row>
+          <Col className="d-flex justify-content-center align-items-center">
+            <div
+              className="d-flex justify-content-center align-items-center"
+              style={{
+                height: "25rem",
+                width: "15rem",
+                marginRight: "12rem",
+                backgroundColor: "#e6e6e6",
+              }}
+            >
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR2zPtZizoVVf0BC1tBYehKVZ2SdzOAsdk84Q&usqp=CAU"
+                alt="Imag 6"
+                style={{ marginTop: "0.1rem", marginLeft: "23rem" }}
+                height={300}
+                width={500}
+              />
+            </div>
+          </Col>
+          <Col md={1} />
+          <Col md={5} lg={5} xl={5}>
+            <div
+              className="d-flex flex-column align-items-center"
+              style={{ marginTop: "7rem" }}
+            >
+              <h2>UX/UI</h2>
+              <p
+                className="text-right"
+                style={{ maxWidth: "300px", margin: "0 auto" }}
+              >
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Laudantium vel corporis ea sed perferendis deserunt inventore
+                quibusdam! Quaerat.
+              </p>
+            </div>
+          </Col>
+        </Row>
+
       </Container>
     </div>
   );
