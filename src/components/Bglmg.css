@@ -5,7 +5,7 @@
 .bglmg-image{
     background-image: url(https://cdn.wallpapersafari.com/67/54/fMTqrn.jpg);
     background-size: cover;
-    background-position: center;
+    background-position: 20px center right;
     height: 300px; 
     margin-top: 2rem;
 }

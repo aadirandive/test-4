@@ -16,13 +16,12 @@
   justify-content: center;
   align-items: center;
   width: 95px;
-  height: 100px;
-  border-radius: 25px;
+  height: 100px;  
   transition: opacity 0.3s;
   opacity: 1;
-  margin-top: 1rem;
+  margin-top: 0.7rem;
   margin-left: 15rem;
-  background-color: rgb(247, 244, 241);
+  margin-bottom: 2rem;
 }
 
 .navbar-container.hidden {
@@ -32,7 +31,7 @@
 
 .navbar-background {
   position: fixed;
-  top: 0;
+  top: 10rem;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -53,6 +52,7 @@
 .custom-navbar {
   /* background-color: transparent; */
   /* transition: background-color 0.3s; */
+  /* position: sticky; */
   display: flex;
   justify-content: center;
   margin-top: 1rem;

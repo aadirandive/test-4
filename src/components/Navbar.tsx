@@ -35,67 +35,70 @@ const Navbar: React.FC<NavbarProps> = ({ onContentChange }) => {
   };
 
   return (
-    <div className={`navbar-container ${navbarVisible ? "" : "hidden"}`}>
-      <div className="logo-container">
-        <img src={Kairavilogo} alt="Logo" />
+    <>
+      <div className={`navbar-container ${navbarVisible ? "" : "hidden"}`}>
+        <div className="logo-container">
+          <img src={Kairavilogo} alt="Logo" />
+        </div>
+
+        <div className="navbar-background"></div>
+
+        <BootstrapNavbar
+          className={`custom-navbar ${navbarExpanded ? "expanded" : ""}`}
+          expand="lg"
+          expanded={navbarExpanded}
+        >
+          <BootstrapNavbar.Toggle
+            aria-controls="basic-navbar-nav"
+            onClick={handleNavbarToggle}
+          />
+          <BootstrapNavbar.Collapse id="basic-navbar-nav">
+            <Nav className="mr-auto">
+              <Nav.Link
+                as={Link}
+                to="about"
+                smooth={true}
+                duration={500}
+                onClick={() => onContentChange("about")}
+                style={{ color: "black" }}
+              >
+                About
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="projects"
+                smooth={true}
+                duration={500}
+                onClick={() => onContentChange("projects")}
+                style={{ color: "black" }}
+              >
+                Projects
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="art-form"
+                smooth={true}
+                duration={500}
+                onClick={() => onContentChange("art-form")}
+                style={{ color: "black" }}
+              >
+                Art-form
+              </Nav.Link>
+              <Nav.Link
+                as={Link}
+                to="contact"
+                smooth={true}
+                duration={500}
+                onClick={() => onContentChange("contact")}
+                style={{ color: "black" }}
+              >
+                Contact
+              </Nav.Link>
+            </Nav>
+          </BootstrapNavbar.Collapse>
+        </BootstrapNavbar>
       </div>
-      <div className="navbar-background"></div>{" "}
-      {/* Added div for background image */}
-      <BootstrapNavbar
-        className={`custom-navbar ${navbarExpanded ? "expanded" : ""}`}
-        expand="lg"
-        expanded={navbarExpanded}
-      >
-        <BootstrapNavbar.Toggle
-          aria-controls="basic-navbar-nav"
-          onClick={handleNavbarToggle}
-        />
-        <BootstrapNavbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link
-              as={Link}
-              to="about"
-              smooth={true}
-              duration={500}
-              onClick={() => onContentChange("about")}
-              style={{ color: "white" }}
-            >
-              About
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="projects"
-              smooth={true}
-              duration={500}
-              onClick={() => onContentChange("projects")}
-              style={{ color: "white" }}
-            >
-              Projects
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="art-form"
-              smooth={true}
-              duration={500}
-              onClick={() => onContentChange("art-form")}
-              style={{ color: "white" }}
-            >
-              Art-form
-            </Nav.Link>
-            <Nav.Link
-              as={Link}
-              to="contact"
-              smooth={true}
-              duration={500}
-              onClick={() => onContentChange("contact")}
-              style={{ color: "white" }}
-            >
-              Contact
-            </Nav.Link>
-          </Nav>
-        </BootstrapNavbar.Collapse>
-      </BootstrapNavbar>
-    </div>
+    </>
   );
 };
 
