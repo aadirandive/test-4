@@ -19,7 +19,7 @@ npm i
 npm run build
 
 # Step 5: Restart the application with PM2 (assuming PM2 is already installed)
-pm2 restart 1
+pm2 restart 0
 
 # Step 6: Verify PM2 status for process with ID 1
-pm2 status 1 | grep "online" && echo "Application with PM2 ID 1 is online" || echo "Application with PM2 ID 1 is not online"
+pm2 status 0 | grep "online" && echo "Application with PM2 ID 1 is online" || echo "Application with PM2 ID 1 is not online"
