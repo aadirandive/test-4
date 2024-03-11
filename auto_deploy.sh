@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Set your Personal Access Token as an environment variable
-export GIT_TOKEN="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"
+
 
 # Step 1: Go to the specific folder
 cd /var/lib/jenkins/workspace/test
